@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  front: MyString
+  rear: MyString
+  features: MyString
+  phone_id: 
+
+two:
+  front: MyString
+  rear: MyString
+  features: MyString
+  phone_id: 

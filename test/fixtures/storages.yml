@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ram: MyString
+  flash: MyString
+
+two:
+  ram: MyString
+  flash: MyString

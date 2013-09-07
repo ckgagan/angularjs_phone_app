@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  talk_time: MyString
+  standby: MyString
+
+two:
+  type: 
+  talk_time: MyString
+  standby: MyString

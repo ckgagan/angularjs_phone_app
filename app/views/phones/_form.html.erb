@@ -1,0 +1,88 @@
+<%= form_for(@phone) do |f| %>
+  <% if @phone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@phone.errors.count, "error") %> prohibited this phone from being saved:</h2>
+
+      <ul>
+      <% @phone.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.fields_for :images do |image_handler| %>
+      <%= image_handler.file_field :image %>
+    <% end %>
+  </div>
+
+    <div class="field">
+    <%= f.fields_for :battery do |battery_handler| %>
+      <%= battery_handler.label :battery_type %>: <%= battery_handler.text_field :battery_type %>
+      <%= battery_handler.label :talk_time %>: <%= battery_handler.text_field :talk_time %>
+      <%= battery_handler.label :standby %>: <%= battery_handler.text_field :standby %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.fields_for :storage do |storage_handler| %>
+      <%= storage_handler.label :ram %><%= storage_handler.text_field :ram %>
+      <%= storage_handler.label :flash %><%= storage_handler.text_field :flash %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.fields_for :connectivity do |connectivity_handler| %>
+      <%= connectivity_handler.label :cell %><%= connectivity_handler.text_field :cell %>
+      <%= connectivity_handler.label :wifi %><%= connectivity_handler.text_field :wifi %>
+      <%= connectivity_handler.label :bluetooth %><%= connectivity_handler.text_field :bluetooth %>
+      <%= connectivity_handler.label :infrared %><%= connectivity_handler.check_box :infrared %>
+      <%= connectivity_handler.label :gps %><%= connectivity_handler.check_box :gps %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.fields_for :operating_system do |os_handler| %>
+      <%= os_handler.label :os %><%= os_handler.text_field :os %>
+      <%= os_handler.label :ui %><%= os_handler.text_field :ui %>
+      <%= os_handler.label :version %><%= os_handler.text_field :version %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.fields_for :dimension do |dimension_handler| %>
+      <%= dimension_handler.label :length %><%= dimension_handler.text_field :length %>
+      <%= dimension_handler.label :breadth %><%= dimension_handler.text_field :breadth %>
+      <%= dimension_handler.label :weigth %><%= dimension_handler.text_field :weigth %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.fields_for :display do |display_handler| %>
+      <%= display_handler.label :screen_size %><%= display_handler.text_field :screen_size %>
+      <%= display_handler.label :screen_resolution %><%= display_handler.text_field :screen_resolution %>
+      <%= display_handler.label :touch_screen %><%= display_handler.check_box :touch_screen %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.fields_for :camera do |camera_handler| %>
+      <%= camera_handler.label :front %><%= camera_handler.text_field :front %>
+      <%= camera_handler.label :rear %><%= camera_handler.text_field :rear %>
+      <%= camera_handler.label :features %><%= camera_handler.text_field :features %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

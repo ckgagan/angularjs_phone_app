@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  length: MyString
+  breadth: MyString
+  weigth: MyString
+  references: MyString
+  phone: MyString
+
+two:
+  length: MyString
+  breadth: MyString
+  weigth: MyString
+  references: MyString
+  phone: MyString
